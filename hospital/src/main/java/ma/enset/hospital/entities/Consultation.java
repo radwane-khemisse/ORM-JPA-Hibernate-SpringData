@@ -6,21 +6,14 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.util.Date;
-import java.util.function.Consumer;
-
 @Entity
 @Data @NoArgsConstructor @AllArgsConstructor
-public class RendezVous {
+public class Consultation {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
-    private Date date;
-    private StatusRDV status;
-    private boolean annule;
-    @ManyToOne
-    private Patient patient;
-    @ManyToOne
-    private Medecin medecin;
-    @OneToOne(mappedBy = "rendezVous")
-    private Consultation consultation;
+    private Date dateConsultation;
+    private String rapport;
+    @OneToOne
+    private RendezVous rendezVous;
 
 }
