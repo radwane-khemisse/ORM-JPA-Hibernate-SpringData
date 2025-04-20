@@ -14,6 +14,7 @@ public class RendezVous {
     @Id @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private Date date;
+    @Enumerated(EnumType.STRING)
     private StatusRDV status;
     private boolean annule;
     @ManyToOne
